@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <title>Angular Material - Starter App</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+    <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
+    <link rel="stylesheet" href="assets/app.css"/>
+  </head>
+
+  <body ng-app="starterApp" layout="column" ng-controller="FdController as fd">
+
+	<md-toolbar layout="row" >
+		<md-button class="menu" hide-gt-sm ng-click="fd.toggleList()" aria-label="Show User List" >
+        	<md-icon md-svg-icon="menu" ></md-icon>
+      	</md-button>
+		<h1>Tool Bar</h1>
+	</md-toolbar>
+	<div flex layout="row">
+		<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+			<md-list  layout-padding layout-margin>
+				<md-item flex class="md-whiteframe-z2" layout="row">item 1</md-item>
+				<md-item flex class="md-whiteframe-z2" layout="row">item 2</md-item>
+				<md-item flex class="md-whiteframe-z2" layout="row">item 3</md-item>
+				<md-item flex class="md-whiteframe-z2" layout="row">item 4</md-item>
+				<md-item flex class="md-whiteframe-z2" layout="row">item 5</md-item>
+				<md-item flex class="md-whiteframe-z2" layout="row">item 6</md-item>
+				<md-item flex class="md-whiteframe-z2" layout="row">item 7</md-item>
+				<md-item flex class="md-whiteframe-z2" layout="row">item 8</md-item>
+			</md-list>
+		</md-sidenav>
+	</div>
+
+  
+
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./bower_components/angular-animate/angular-animate.js"></script>
+    <script src="./bower_components/angular-aria/angular-aria.js"></script>
+    <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
+    
+    <script src="./src/users/Fd.js"></script>
+    <script src="./src/users/FdController.js"></script>
+    <script type="text/javascript">
+
+          angular
+              .module('starterApp', ['ngMaterial', 'fd'])
+               .config(function($mdThemingProvider, $mdIconProvider){
+
+		              $mdIconProvider
+                      .defaultIconSet("./assets/svg/avatars.svg", 128)
+                      .icon("menu"       , "./assets/svg/menu.svg"        , 24)
+                      .icon("share"      , "./assets/svg/share.svg"       , 24)
+                      .icon("google_plus", "./assets/svg/google_plus.svg" , 512)
+                      .icon("hangouts"   , "./assets/svg/hangouts.svg"    , 512)
+                      .icon("twitter"    , "./assets/svg/twitter.svg"     , 512)
+                      .icon("phone"      , "./assets/svg/phone.svg"       , 512);
+              
+                      $mdThemingProvider.theme('default')
+                          .primaryPalette('deep-purple')
+                          .accentPalette('green');
+
+              });
+              ;
+
+    </script>
+
+  </body>
+</html>
